@@ -1,0 +1,55 @@
+
+        	#score{
+        		position: absolute;
+        		left:10%;
+        		top: 30%;
+        	}
+        	#players{
+        		width: 100%;
+        		position: absolute;
+
+        		left:120%;
+        		top: 3%;
+        	}
+			body{
+				background:#081f2c url(bg.jpg) repeat top left;
+				font-family:Arial;
+				color:white;
+			}
+			span.reference{
+				position:fixed;
+				left:10px;
+				bottom:10px;
+				font-size:12px;
+
+			}
+			table{
+				
+				padding: 20px;
+				width: 100%:;
+				border: 1px solid white;
+			}
+			a{
+				color: orange;
+			}
+			span.reference a{
+				color:#aaa;
+				text-transform:uppercase;
+				text-decoration:none;
+				text-shadow:1px 1px 1px #000;
+				margin-right:30px;
+			}
+			span.reference a:hover{
+				color:#ddd;
+			}
+			ul.sdt_menu{
+				margin-top:40px;
+			}
+			h1.title{
+				font-family:Helvetica;
+				text-transform:uppercase;
+				text-decoration:none;
+				text-shadow:1px 1px 1px #000;
+				color:white;
+			}
+	

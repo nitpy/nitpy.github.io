@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-color: #d0e4fe;
+}
+
+h1 {
+    color: orange;
+    text-align: center;
+}
+
+p {
+    font-family: "Times New Roman";
+    font-size: 20px;
+}
+
+d.double {
+	outline-style: double;
+}
+div {
+    border: 2px solid #a1a1a1;
+    padding: 10px 40px; 
+    background: #dddddd;
+    width: 300px;
+    border-radius: 25px;
+    position:centre;
+}
+#players {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#players td, #players th {
+    font-size: 1em;
+    border: 1px solid #66FF66;
+    padding: 3px 7px 2px 7px;
+}
+
+#players th {
+    font-size: 1.1em;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #009999;
+    color: #ffffff;
+}
+
+#players tr.alt td {
+    color: white;
+    background-color: #0000CC;
+}
+a:link {
+    color: #FF0000;
+    text-decoration:none;
+}
+
+/* visited link */
+a:visited {
+    color: #00FF00;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF00FF;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+</style>
+</head>
+<body>
+
+<h1>FOOTBALL PLAYERS</h1>
+<div>
+<p>Click the button to search for players</p>
+
+<button onclick="myFunction()">Try it</button>
+</div>
+<p id="demo"></p>
+
+<table id="players">
+  <tr>
+    <th><dialog open>Top players</dialog></th>
+    <th>Club</th>
+    <th>Role</th>
+  </tr>
+  <tr class ="alt">
+    <td><a href="./images/cr7.png">Cristiano Ronlado</a></td>
+    <td>Real Madrid</td>
+    <td>Forward</td>
+  </tr>
+  <tr>
+    <td><a href="./images/mn.jpg">Manuel Neuer</a></td>
+    <td>Bayern Munich</td>
+    <td>Goalkeeper</td>
+  </tr>
+  <tr class="alt">    
+    <td><a href="messi.jpg">Lionel Messi</a></td>
+    <td>Barcelona</td>
+    <td>Forward</td>
+</tr>
+  <tr>
+    <td><a href="gotz.jpg">Mario Gotze</a></td>
+    <td>Bayern Munich</td>
+    <td>Midfield</td>
+  </tr>
+</tr>
+  <tr class ="alt">
+    <td><a href="alex.jpg">Alexis Sanchez</a></td>
+    <td>Arsenal</td>
+    <td>Forward</td>
+  </tr>
+</table>
+
+<script>
+function myFunction() {
+    var person = prompt("Please enter player name", "");
+    
+    if (person != null) {
+        document.getElementById("demo").innerHTML =
+        "sorry,details of " + person + " not found";
+    }
+}
+</script>
+
+</body>
+</html>
+
