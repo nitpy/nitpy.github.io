@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Flipkart Order Page! </title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+  	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js "></script>
+	<script src="jquery.debug.js" type="text/javascript"></script>
+	<script>
+         $(document).ready(function()
+		 {
+			$("#clearing").click(function()
+			{
+				$("#name").val("");
+				$("#homeAddress").val("");
+				$("#country").val("");
+							});
+         });
+     </script>
+</head>
+<body>
+	<script>
+			$(document).ready(function()
+			{
+				$('#func').click(function()
+				{
+$.post('OrderPage.php', { Nm:$('#name').val(), Add:$('#homeAddress').val(),Pst:$('#country').val(),
+					}, function(data)
+					{
+						if(data=="Registration Successful")
+						{
+							alert("Order Submitted");
+							window.location="OrderResult.php";
+						}
+						else
+						{
+							alert("Order Rejected");
+						}
+					}).fail(function() 
+					{
+						alert( "Posting failed." );
+					});
+					return false;
+				});
+			});
+		</script>
+		
+			<div data-role="page">
+		<div data-role="header">
+				<a data-role="button" data-transition="slideup" href="Page.html" class="ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-btn-icon-left ui-icon-power">Log Out</a></center>
+		</div>
+		
+		<div data-role="main" class="ui-content">
+		<form method="post" name="NewForm">
+				<table align="center" class="ui-responsive">
+					<tr>
+						<td>Full Name:</td>
+						<td><input type="text" id="name" required/></td>
+					</tr>
+					<tr>
+						<td>Address:</td>
+						<td><input type="text" id="homeAddress" required/></td>
+					</tr>
+					<tr>
+						<td>Country</td>
+						<td><input type="text" id="country" required/></td>
+					</tr>
+					<tr>
+						<td>
+							<a id="func" data-transition="slideup" data-role="button" class="ui-btn ui-btn-b ui-btn-inline ui-icon-check">Submit Your order</a>
+						</td>
+						<td>
+							<a data-role="button" id="clearing" data-transition="slideup" class="ui-btn ui-btn-b ui-btn-inline ui-icon-refresh">Reset</a>
+						</td>
+					</tr>
+			</table>
+			</form>
+		</div>
+		
+		<div data-role="footer">
+			<h1>Uttam Reddy Lankala </h1>
+		</div>
+	</div>		
+</body>
+</html>

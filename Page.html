@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+	<title>Welcome to Flipkart</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js "></script>
+	<script src="jquery.debug.js" type="text/javascript"></script>
+<script>
+		$(document).ready(function() 
+				{
+					$("#postJson").click(function()
+					{
+						$("#user").email();
+						$("#pass").Clength();
+						$("#user").empty();
+						$("#pass").empty();
+					});
+					/*$("#Rjson").click(function()
+					{
+					$("#user").empty();
+					$("#pass").empty();
+					$("#user").email();
+					$("#pass").Clength();
+					});*/
+					$("#reset").click(function()
+			{
+				$("#user").val("");
+				$("#pass").val("");
+			});
+				});
+		</script>
+</head>
+<body>
+	<div data-role="page" id="pageone">
+		<div data-role="header">
+    <h1></h1>
+  </div>
+		<div data-role="main" class="ui-content">
+			<form name="Form1" method="post">
+				<label>User Name</label>
+				<input type="text" name="user" id="user">
+			</br>
+				<label>Password</label>
+		<input type="text" name="pass" id="pass" maxlength="12">
+					
+   				 <div data-role="controlgroup" data-type="horizontal">
+      		<center>  
+      		 <a data-role="button" class="ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-btn-icon-left " id='postJson' value="Register"> Register</a>
+      		<a data-role="button" id="Rjson" data-transition="flow" class="ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-btn-icon-left ">Login</a>
+
+      		<a data-role="button" id="reset" data-transition="flow" class="ui-btn ui-btn-b ui-btn-inline ui-corner-all ui-btn-icon-left">Reset</a>
+      		</center>
+     		<p id="resport"></p>
+			</form>
+			<script>
+					$(document).ready(function(){
+							$('#postJson').click(function(){
+			$.post('Registration.php', {User_name:$('#user').val(), Password:$('#pass').val()},
+						function(data){
+												alert(data);
+										}).fail(function(){
+								alert("Registration failed." );		
+										});
+										return false;			
+							});
+				$('#Rjson').click(function()
+				{
+				   $.post('login.php',{ User_name:$('#user').val(), password:$('#pass').val()}, 
+							  	function(data){
+								
+							  	
+						if(data=="Login Successful")
+						{
+							window.location="orderPage.html";
+						}             
+						
+					}).fail(function() 
+					{
+						alert( "Login failed." );
+								  });
+								  return false;
+							});
+						});			
+			</script>
+		</div>
+		<div data-role="footer">
+    <h1>Uttam Reddy Lankala </h1>
+  </div>
+	</div>
+	<div data-role="page" id="pagetwo">
+		<div data-role="main" class="ui-content">
+			
+		</div>
+	</div>
+
+</body>
+</html>
